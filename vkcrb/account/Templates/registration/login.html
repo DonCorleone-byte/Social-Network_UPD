@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+    <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Добро пожаловать!</h4>
+                <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                    <p class="text-center"><a href="{% url "social:begin" "google-oauth2" %}">Google</p>
+                    <p class="text-center"> <a href="{% url "password_reset" %}">Забыл пароль</a></p>
+                </form>
+            </div>
+    </div>
+<p class="mt-5 mb-3 text-muted text-center">© 2021 Umovist Maxim</p>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Пока, пока{% endblock %}
+
+{% block content %}
+    <!--<h1>Выйти</h1>
+    <p>Вы успешно покинули социальную сеть
+        можете <a href="{% url 'login' %}">вернуться</a>.
+    </p>-->
+
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Уже уходите?</h4>
+        Может все же передумаете и <a href="{% url 'login' %}">останетесь?</a>
+            </div>
+{% endblock %}

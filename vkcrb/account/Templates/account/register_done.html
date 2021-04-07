@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{% block title %}Добро пожаловать{% endblock %}
+{% block content %}
+    <div class="alert alert-success" role="alert">
+        <h4 class="card-title">Рады Вас приветствовать {{ new_user.first_name }}!</h4>
+            <p class="text-center">Ваша учетная запись успешно создана.
+                Теперь вы можете <a href="{% url "login" %}">авторизоваться</a>.
+            </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+{% block title %} Отправить пост {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    {% if sent %}
+        <h1>E-mail успешно отправлен</h1>
+        <p>"{{ post.title }}" успешно отправлен по адресу {{ form.cleaned_data.to }}.</p>
+    {% else %}
+    <h1>Доставлено "{{ post.title }}" на e-mail</h1>
+<form action="." method="post">
+{{ form|crispy }}
+{% csrf_token %}
+<input type="submit" value="Отправить E-mail">
+</form>
+{% endif %}
+{% endblock %}
