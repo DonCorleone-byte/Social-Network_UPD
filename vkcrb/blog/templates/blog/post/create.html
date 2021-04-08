@@ -1,0 +1,11 @@
+{% extends "blog/base.html" %}
+{% block title %}Создание статьи{% endblock %}
+{% block content %}
+
+<h1>Создание статьи</h1>
+
+<form method="post">
+    <input type="text" placeholder="Введите название" class="form-control"><br>
+    <textarea placeholder="Введите текст статьи" class="form-control"></textarea><br>
+     <button type="submit" class="btn btn-success">Добавить</button>
+</form>

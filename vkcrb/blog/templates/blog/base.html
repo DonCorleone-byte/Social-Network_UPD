@@ -31,7 +31,7 @@
           <a class="nav-link active" aria-current="page" href="{% url "dashboard" %}">Главная страница</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../blog">Блог</a>
+          <a class="nav-link" href="/blog">Блог</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url "user_list" %}">Люди</a>
@@ -41,7 +41,7 @@
           <ul class="dropdown-menu" aria-labelledby="dropdown01">
             <li><a class="dropdown-item" href="{% url "password_change" %}">Сменить пароль</a></li>
             <li><a class="dropdown-item" href="{% url "edit" %}"">Редактировать профиль</a></li>
-            <li><a class="dropdown-item" href="../../blog">Something else here</a></li>
+            <li><a class="dropdown-item" href="../../blog">Блог</a></li>
           </ul>
         </li>
       </ul>
@@ -72,11 +72,18 @@
 </ul>
 {% endif %}
     <div  class="container">
-    <div  class="row justify-content-center">
-      <div  class="col-4">
+    <div  class="row justify-content-center col-2">
+        <button class="btn btn-outline-success" type="submit">
+             <a href="{% url "register" %}">Добавить</a>
+        </button>
+    </div>
+    <div  class="row justify-content-left">
+      <div  class="col-6">
       {% block content %}
       {% endblock %}
+
       </div>
     </div>
+    <p class="mt-5 mb-3 text-muted text-center fixed-bottom">© 2021 Umovist Maxim</p>
   </div>
 </html>
