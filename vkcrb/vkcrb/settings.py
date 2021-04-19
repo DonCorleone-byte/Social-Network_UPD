@@ -16,10 +16,14 @@ SECRET_KEY = 'leili9*i5$(ev!wkvug+*7s75s7$nyt(^s8u566zgoq#0cpiu)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+'10d062b78274.ngrok.io',
+    '127.0.0.1'
+]
 
 
 # Application definition
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
@@ -32,7 +36,10 @@ INSTALLED_APPS = [
     'crispy_forms',
     'social_django',
     'sorl.thumbnail',
-    'blog.apps.BlogConfig'
+    'blog.apps.BlogConfig',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'images.apps.ImagesConfig',
 ]
 
 MIDDLEWARE = [
