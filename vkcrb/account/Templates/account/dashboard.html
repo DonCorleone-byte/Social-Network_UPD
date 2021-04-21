@@ -3,14 +3,117 @@
 {% block title %}В КЦРБ{% endblock %}
 
 {% block content %}
-    <!--<h1>Главная страница</h1>
-    <p>Добро пожаловать на главную страницу</p>-->
-    <main class="container">
-        <div class="starter-template text-center py-5 px-3">
-            <h1>Главная страница</h1>
-            <p class="lead">Добро пожаловать на главную страницу соц.сети
-            <br>Кызылжарской районной больницы
-            </p>
+
+<section class="top">
+    <div class="container">
+
+      <img class="logo animate__animated animate__fadeInLeftBig" src="{% static 'images/logo.svg' %}" alt="logo">
+
+      <div class="dashboard__content">
+
+        <div class="dashboard__slider animate__animated animate__fadeInLeftBig animate__delay-1s">
+          <div class="dashboard__slider-wrapper">
+
+            <div class="slider__wrapper-inner">
+              <img class="dashboard__slider-img" src="{% static 'images/content/content-1.jpg' %}" alt="hello">
+              <div class="dashboard__slider-content">
+                <h3 class="dashboard__slider-title">Добро пожаловать !</h3>
+                <p class="dashboard__slider-text">
+                  Добро пожаловать на главную страницу соц.сети Кызылжаркой РБ .Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit.
+                  Sagittis
+                  porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id.
+                  Diam
+                  sit sed volutpat massa. Egestas ornare vel volutpat.
+                </p>
+                <div class="dashboard__slider-bottom">
+                  <div class="dashboard__slider-date">21.06.2020</div>
+                  <a class="dashboard__slider-btn" href="#">Подробнее...</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="slider__wrapper-inner">
+              <img class="dashboard__slider-img" src="{% static 'images/content/content-1.jpg' %}" alt="">
+              <div class="dashboard__slider-content">
+                <h3 class="dashboard__slider-title">Добро пожаловать !</h3>
+                <p class="dashboard__slider-text">
+                  Добро пожаловать на главную страницу соц.сети Кызылжаркой РБ .Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit.
+                  Sagittis
+                  porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id.
+                  Diam
+                  sit sed volutpat massa. Egestas ornare vel volutpat.
+                </p>
+                <div class="dashboard__slider-bottom">
+                  <div class="dashboard__slider-date">21.06.2020</div>
+                  <a class="dashboard__slider-btn" href="#">Подробнее...</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="slider__wrapper-inner">
+              <img class="dashboard__slider-img" src="{% static 'images/content/content-1.jpg' %}" alt="">
+              <div class="dashboard__slider-content">
+                <h3 class="dashboard__slider-title">Добро пожаловать !</h3>
+                <p class="dashboard__slider-text">
+                  Добро пожаловать на главную страницу соц.сети Кызылжаркой РБ .Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit. Elementum volutpat orci turpis urna. Et vestibulum, posuere tortor lacinia sit.
+                  Sagittis
+                  porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id.
+                  Diam
+                  sit sed volutpat massa. Egestas ornare vel volutpat.
+                </p>
+                <div class="dashboard__slider-bottom">
+                  <div class="dashboard__slider-date">21.06.2020</div>
+                  <a class="dashboard__slider-btn" href="#">Подробнее...</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </main>
+
+
+        <div class="dashboard__userboard animate__animated  animate__fadeInRightBig animate__delay-1s">
+          <div class="dashboard__userboard-wrapper">
+            <h4 class="dashboard__userboard-name">Привет <span>Максим!</span></h4>
+            <img class="dashboard__userboard-photo" src="{% static 'images/user.png' %}" alt="avatar">
+
+            <ul class="userboard__list">
+              <li class="userboard__list-blog">
+                <a class="userboard__list-link list-blog" href="../../blog">Блог</a>
+              </li>
+              <li class="userboard__list-people">
+                <a class="userboard__list-link list-people" href="{% url "user_list" %}">Люди</a>
+              </li>
+
+              <li class="dropdown">
+                <p class="userboard__list-link userboard__list-title">
+                  Меню</p>
+                <div class="userboard__list-content">
+                  <a class="userboard__list-content-link" href="#">Сменить пароль</a>
+                  <a class="userboard__list-content-link" href="#">Редактировать профиль</a>
+                </div>
+              </li>
+
+
+            </ul>
+            <a class="userboard__list-link userboard__exit-btn" href="#">Выход</a>
+            <a class="politic" href="#">Политика конфиденциальности</a>
+            <div class="autor">©2021 Umovist Maxim</div>
+          </div>
+        </div>
+      </div>
+        {% with total_images_created=request.user.images_created.count %}
+<p>Вы добавили в закладки
+{{total_images_created }} изображения{{ total_images_created|pluralize }}.</p>
+{% endwith %}
+<p>Для того,чтобы воспользоваться букмарклетом перетащите его в закладки-> откройте на любом сайте и оцените результат
+<a href="javascript:{% include "bookmarklet_launcher.js" %}" class="button">
+Bookmark it</a>
+<p>
+    </div>
+  </section>
+    
+
 {% endblock %}
