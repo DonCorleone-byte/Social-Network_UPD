@@ -1,21 +1,31 @@
 {% extends "base.html" %}
-
 {% load crispy_forms_tags %}
 {% block title %}Авторизация{% endblock %}
 
 {% block content %}
-    <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Добро пожаловать!</h4>
-                <form method="post">
+
+     <div class="dashboard__content">
+
+          <div class="dashboard__userboard-wrapper">
+                <h4 class="dashboard__userboard-name">Добро пожаловать!</h4>
+            <!--    <form method="post">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}">
                 {{ form|crispy }}
                 <button type="submit" class="btn btn-primary btn-block">Войти</button>
                     <p class="text-center"><a href="{% url "social:begin" "google-oauth2" %}">Google</p>
-                    <p class="text-center"> <a href="{% url "password_reset" %}">Забыл пароль</a></p>
-                </form>
-            </div>
+                    <a class="userboard__list-link userboard__exit-btn" href="{% url "password_reset" %}">Забыл пароль</a></p>
+                </form>-->
+      <form action="." method="post">
+          {% csrf_token %}
+            {{ form.as_p }}<br>
+    <input class="userboard__list-link userboard__exit-btn" type="submit" value="Войти">
+</form>
+
+          </div>
+
     </div>
+</div>
+</section>
 
 {% endblock %}

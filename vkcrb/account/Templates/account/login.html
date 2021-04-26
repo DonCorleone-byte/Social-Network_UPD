@@ -3,11 +3,21 @@
 {% block title %}Авторизация{% endblock %}
 
 {% block content %}
-<h1>Авторизация</h1>
+<section class="top">
+<div class="container">
+    <div class="dashboard__content">
+        <div class="dashboard__userboard animate__animated  animate__fadeInRightBig animate__delay-1s">
+          <div class="dashboard__userboard-wrapper">
+<h4 class="dashboard__userboard-name">Авторизация</h4>
     <p>Пожалуйста, заполните форму для авторизации:</p>
     <form action="." method="post">
         {{ form.as_p }}
         {% csrf_token %}
         <p><input type="submit" value="Все верно"></p>
     </form>
+          </div>
+        </div>
+    </div>
+</div>
+</section>
 {% endblock %}

@@ -47,3 +47,7 @@ class ProfileEditForm(forms.ModelForm):
             'date_of_birth': TextInput(attrs={
                 'class': 'date'
             })}
+
+class Login(forms.Form):
+    login = forms.CharField(label='Логин', max_length=25),
+    password = forms.CharField(label='Пароль', max_length=25, widget=forms.PasswordInput),
