@@ -3,10 +3,16 @@
 {% load crispy_forms_tags %}
 {% block title %}Добро пожаловать{% endblock %}
 {% block content %}
-    <div class="alert alert-success" role="alert">
-        <h4 class="card-title">Рады Вас приветствовать {{ new_user.first_name }}!</h4>
-            <p class="text-center">Ваша учетная запись успешно создана.
+
+<section class="login">
+    <div class="container">
+        <div class="login__wrapper">
+            <h5 class="registranion__form-title">Рады Вас приветствовать {{ new_user.first_name }}!</h5>
+            <br>
+            <h3 class="registranion__form-subtitle">Ваша учетная запись успешно создана.
                 Теперь вы можете <a href="{% url "login" %}">авторизоваться</a>.
-            </p>
+            </h3>
+        </div>
     </div>
+</section>
 {% endblock %}

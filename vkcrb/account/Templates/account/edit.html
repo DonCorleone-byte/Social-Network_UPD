@@ -1,19 +1,23 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
+ {% load static %}
 
 {% block title %}Редактировать{% endblock %}
 {% block content %}
- <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Редактируйте свой аккаунт!</h4>
-                <form method="post">
-                {% csrf_token %}
-                <input type="hidden" name="next" value="{{ next }}">
-                {{ user_form.as_p }}
-                    {{ profile_form.as_p }}
-                <button type="submit" class="btn btn-primary btn-block">Сохранить</button>
-                </form>
+    <section class="registration">
+        <div class="container">
+            <div class="registration__wrapper">
+                <div class="registranion__form">
+                    <h5 class="registranion__form-title">Редактируйте свой аккаунт!</h5>
+                    <form method="post">
+                        {{ user_form }}
+                        {{ profile_form }}
+                        {% csrf_token %}
+                        <button class="registration__btn">Сохранить</button>
+                    </form>
+                </div>
+                <img src="{% static 'images/registation.jpg' %}" alt="registation.jpg">
             </div>
-    </div>
+        </div>
+    </section>
 
 {% endblock %}

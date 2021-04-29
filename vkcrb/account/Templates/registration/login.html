@@ -4,21 +4,6 @@
 {% block title %}Авторизация{% endblock %}
 
 {% block content %}
-
-            <!--    <form method="post">
-                {% csrf_token %}
-                <input type="hidden" name="next" value="{{ next }}">
-                {{ form|crispy }}
-                <button type="submit" class="btn btn-primary btn-block">Войти</button>
-                    <p class="text-center"><a href="{% url "social:begin" "google-oauth2" %}">Google</p>
-                    <a class="userboard__list-link userboard__exit-btn" href="{% url "password_reset" %}">Забыл пароль</a></p>
-                </form>
-      <form action="." method="post">
-          {% csrf_token %}
-            {{ form.as_p }}<br>
-    <input class="userboard__list-link userboard__exit-btn" type="submit" value="Войти">
-</form>-->
-
   <section class="login">
     <div class="container">
       <div class="login__wrapper">
@@ -41,7 +26,4 @@
       </div>
     </div>
   </section>
-
-
-
 {% endblock %}

@@ -9,14 +9,33 @@ class LoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
 class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(label='Пароль',
-                               widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Повторите пароль',
-                                widget=forms.PasswordInput)
+    password = forms.CharField(label='',
+                               widget=forms.PasswordInput(attrs = {'class': 'registration__input',
+                                                                   'placeholder': 'Введите пароль'}), )
+    password2 = forms.CharField(label='',
+                                widget=forms.PasswordInput(attrs = {'class': 'registration__input',
+                                                                    'placeholder': 'Повторите пароль'}), )
 
     class Meta:
         model = User
         fields = ('username', 'first_name', 'email')
+        labels = {
+            'username': '', 'first_name': '', 'email': ''
+        }
+        help_texts = {
+            'username': ' ',
+        }
+        widgets = {
+            'username': TextInput(attrs={
+                'class': 'registration__input', 'placeholder': 'Имя пользователя'
+            }),
+            'first_name': TextInput(attrs={
+                'class': 'registration__input', 'placeholder': 'Имя'
+            }),
+            'email': TextInput(attrs={
+                'class': 'registration__input', 'placeholder': 'Адрес электронной почты'
+            }),
+        }
 
     def clean_password2(self):
         cd = self.cleaned_data
@@ -28,24 +47,33 @@ class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email')
+        labels = {
+            'first_name': '', 'last_name': '', 'email': ''
+        }
         widgets = {
             'first_name': TextInput(attrs={
-                'class': 'form-control', 'placeholder': 'Введите имя'
+                'class': 'registration__input', 'placeholder': 'Имя пользователя'
             }),
             'last_name': TextInput(attrs={
-                'class': 'form-control', 'placeholder': 'Введите email'
+                'class': 'registration__input', 'placeholder': 'Имя'
             }),
             'email': TextInput(attrs={
-                'class': 'form-control', 'placeholder': 'Введите комментарий'
-            })
+                'class': 'registration__input', 'placeholder': 'Адрес электронной почты'
+            }),
         }
 class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ('date_of_birth', 'photo')
+        labels = {
+            'date_of_birth': '', 'photo': ''
+        }
+        help_texts = {
+            'date_of_birth': ' ',
+        }
         widgets = {
             'date_of_birth': TextInput(attrs={
-                'class': 'date'
+                'class': 'registration__input', 'placeholder': 'Дата рождения'
             })}
 
 class Login(forms.Form):
