@@ -17,8 +17,10 @@
             <button class="form__btn-register"><a href="{% url 'register' %}">Регистрация</a></button>
           </div>
           <div class="form__btn-bottom">
-            <a class="form__btn-restore" href="{% url "password_reset" %}">восстановить пароль</a>
-            <a class="form__btn-politic" href="#">политика конфиденциальности</a>
+            <a data-fancybox data-src="#restore__form" href="javascript:;"
+               class="form__btn-restore">восстановить пароль</a>
+            <a data-fancybox data-src="#politic__form" href="javascript:;"
+               class="form__btn-politic">политика конфиденциальности</a>
           </div>
           <p class="authorization__google">авторизация с помощью <a class="auth__google"
                                                                     href="{% url "social:begin" "google-oauth2" %}">Google</a></p>
@@ -26,4 +28,33 @@
       </div>
     </div>
   </section>
+
+      <div id="restore__form">
+    <h5 class="restore__form-title">Восстановление пароля</h5>
+    <form>
+      <input class="restore__form-input"  type="text" placeholder="Адресс электронной почты">
+      <p class="restore__form-info">
+        <span>*</span>Если вы забыли имя пользователя или пароль или не можете получить доступ к аккаунту
+      </p>
+      <button class="support__form-btn" type="submit">Сбросить</button>
+    </form>
+  </div>
+
+ <div id="politic__form">
+    <p>
+     <h1>Политика конфиденциальности сервиса VKCRB.KZ</h1>
+     <br>
+     <p>1. Общие положения</p>
+     <p>1.1. Предметом регулирования настоящей Политики конфиденциальности (далее – «Политика»)
+     являются отношения между Обществом с ограниченной ответственностью «Максим.Ру»
+     (ОГРН 1027739850962, Казахстан, 125167, г. Бишкуль, ул. Ульянова д.23, стр.79),
+     далее «Максим.ру» или «Компания», которое является правообладателем сайтов, сервисов, программ и/или
+     иных продуктов, в том числе информационного, коммуникационного, рекламного, образовательного,
+      развлекательного и иного характера (далее – «Сервисы», а в отдельности – «Сервис»), расположенных в сети
+     Интернет по адресу https://vkcrb.kz/ (далее – «Сайт»), а также на иных администрируемых vkcrb.kz доменах, и Вами
+      (физическим лицом пользователем сети Интернет), далее  «Пользователь», по поводу обработки информации о Пользователе
+     , включая персональные данные, в процессе использования таким лицом Сервисов vkcrb.kz (далее – «Информация»).
+     </p>
+    </p>
+ </div>
 {% endblock %}

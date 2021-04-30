@@ -425,11 +425,13 @@ body{
 
 #restore__form,
 #exit__popup,
+#politic__form,
 #change__form{
     display: none;
     background: #516395;
     box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5);
     text-align: center;
+    margin: 50px;
 }
 
 .restore__form-title,
