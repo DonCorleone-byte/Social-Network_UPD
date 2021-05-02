@@ -12,16 +12,18 @@ class EmailPostForm(forms.Form):
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('name', 'email', 'body')
+        fields = ('name', 'body')
+        labels = {
+            'name': '', 'body': ''
+
+        }
         widgets = {
             'name': TextInput(attrs={
-                'class': 'form-control','placeholder':'Введите имя'
+                'class': 'comments__form-input','placeholder':'Введите имя'
             }),
-            'email': TextInput(attrs={
-                'class': 'form-control', 'placeholder': 'Введите email'
-            }),
-            'body': Textarea(attrs={
-                'class': 'form-control', 'placeholder': 'Введите комментарий'
+
+            'body': TextInput(attrs={
+                'class': 'comments__form-input', 'placeholder': 'Введите комментарий'
             })
         }
 

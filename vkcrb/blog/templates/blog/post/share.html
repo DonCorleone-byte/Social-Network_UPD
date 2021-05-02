@@ -2,22 +2,6 @@
 {% block title %} Отправить пост {% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
     {% if sent %}
         <h1>E-mail успешно отправлен</h1>
         <p>"{{ post.title }}" успешно отправлен по адресу {{ form.cleaned_data.to }}.</p>

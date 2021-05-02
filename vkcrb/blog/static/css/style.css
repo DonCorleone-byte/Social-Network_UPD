@@ -665,7 +665,6 @@ body{
     padding: 23px 35px;
 }
 
-
 .post__title{
     font-weight: 500;
     font-size: 18px;
@@ -734,6 +733,7 @@ body{
     display: block;
     color: #516395;
 }
+
 
 .publication__content{
     background-color: #516395;
@@ -908,4 +908,3 @@ body{
 .comments__user-btn:hover{
     color: #fff;
 }
-
