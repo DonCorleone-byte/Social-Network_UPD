@@ -1,14 +1,15 @@
-<div class="pagination">
-  <span class="step-links">
-    {% if page.has_previous %}
-      <a href="?page={{ page.previous_page_number }}">Назад</a>
-    {% endif %}
-    <span class="current">
-      Стр. {{ page.number }} из {{ page.paginator.num_pages }}.
-    </span>
-      {% if page.has_next %}
-        <a href="?page={{ page.next_page_number }}">Следующая</a>
-      {% endif %}
-  </span>
-</div>
 
+
+                <div class="pagination">
+                    <ul class="pagination-list">
+                            {% if page.has_previous %}
+                        <li class="pagination-list__item"><a href="?page={{ page.previous_page_number }}">Назад</a></li>
+                        {% endif %}
+                        <li class="pagination-list__item  active"> Стр. {{ page.number }} из {{ page.paginator.num_pages }}.</li>
+                    {% if page.has_next %}
+                        <li class="pagination-list__item"><a href="?page={{ page.next_page_number }}">Следующая</a></li>
+                    {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>

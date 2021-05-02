@@ -1,13 +1,31 @@
 {% extends "blog/base.html" %}
+{% load static %}
 {% block title %}Мой блог{% endblock %}
 {% block content %}
-    <h1>Мой блог!</h1>
-        {% for post in posts %}
-        <h2>
-            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-        </h2>
-        <p class="date">Опубликовано {{ post.publish }} автор {{ post.author }}</p>
-        {{ post.body|truncatewords:30|linebreaks }}
-{% endfor %}
+
+    <section class="publication__list">
+        <div class="container">
+            <h5 class="publication__list-title">Новости VKCRB</h5>
+            <div class="publication__list-wrapper">
+
+{% for post in posts %}
+                <div class="publication__list-inner animate__animated animate__fadeInLeftBig">
+                    <img class="post__img" src="{% static 'images/content/post__img-2.jpg' %}" alt="post__img">
+                    <div class="post__content">
+
+                        <h3 class="post__title">{{ post.title }}</h3>
+                        <p class="post__text">
+                        {{ post.body|truncatewords:30|linebreaks }}
+                        </p>
+                        <div class="post__bottom">
+                            <div class="post__bottom-date">
+                                <p class="date">Опубликовано {{ post.publish }} автор {{ post.author }}</p></div>
+                            <a class="post__bottom-btn" href="{{ post.get_absolute_url }}">Читать</a>
+                        </div>
+                    </div>
+                </div>
+                    {% endfor %}
 {% include "pagination.html" with page=page_obj %}
+</section>
+
 {% endblock %}
