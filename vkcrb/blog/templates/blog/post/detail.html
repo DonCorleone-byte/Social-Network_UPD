@@ -1,67 +1,8 @@
 {% extends "blog/base.html" %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1>{{ post.title }}</h1>
+
+<!--<h1>{{ post.title }}</h1>
 <p class="date">Опубликовано {{ post.publish }} автор {{ post.author }}</p>
 {{ post.body|linebreaks }}
 <p>
@@ -90,5 +31,64 @@
 {% csrf_token %}
 <p><input type="submit" value="Добавить комментарий"></p>
 </form>
-{% endif %}
+{% endif %}-->
+
+    <section class="publication">
+        <div class="container">
+            <div class="publication__content animate__animated animate__zoomIn">
+                <div class="publication__container-text">
+                    <h5 class="publication__title">{{ post.title }}</h5>
+                    <div class="publication__span">
+                        <div class="publication__date">{{ post.publish }}</div>
+                        <div class="publication__subject">{{ post.author }}</div>
+                    </div>
+                    <button class="repost__btn"><a href="{% url "blog:post_share" post.id %}">поделиться</a></button>
+                    <p class="publication__text">
+                        {{ post.body|truncatewords:30|linebreaks }}
+                    </p>
+                </div>
+
+                <img class="publication__img" src="{{post.image.url}}" alt="publication__img">
+
+                <div class="publication__container-text">
+                    <p class="publication__text">
+                        {{ post.body|linebreaks }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <section class="comments">
+            <div class="container">
+                <div class="comments__wrapper">
+                    <h5 class="comments__title">Обсуждение</h5>
+                    <form class="comments__form" action="">
+                        <input class="comments__form-input" type="text" placeholder="Текст комментария">
+                        <button class="comments__form-btn">Отправить</button>
+                    </form>
+                    <div class="comments__users">
+                        <div class="comments__user">
+                            <div class="comments__user-name">Дмитрий </div>
+                            <div class="comments__user-date">1 неделю назад</div>
+                            <p class="comments__user-text">
+                                Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+                            </p>
+                            <button class="comments__user-btn">ответить</button>
+                        </div>
+                        <div class="comments__user">
+                            <div class="comments__user-name">Максим</div>
+                            <div class="comments__user-date">1 неделю назад</div>
+                            <p class="comments__user-text">
+                                Et vestibulum, posuere tortor lacinia sit. Sagittis porttitor orci auctor in at tincidunt arcu egestas. Fusce arcu sodales lacinia eu auctor nunc nam id. Diam sit sed volutpat massa. Egestas ornare vel volutpat.
+                            </p>
+                            <button class="comments__user-btn">ответить </button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+
 {% endblock %}
