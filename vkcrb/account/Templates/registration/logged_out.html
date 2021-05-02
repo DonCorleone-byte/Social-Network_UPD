@@ -3,13 +3,17 @@
 {% block title %}Пока, пока{% endblock %}
 
 {% block content %}
-    <!--<h1>Выйти</h1>
-    <p>Вы успешно покинули социальную сеть
-        можете <a href="{% url 'login' %}">вернуться</a>.
-    </p>-->
-
-    <div class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Уже уходите?</h4>
-        Может все же передумаете и <a href="{% url 'login' %}">останетесь?</a>
-            </div>
+ <section class="login">
+    <div class="container">
+        <div class="login__wrapper">
+      <div id="exit__popup2">
+    <h5 class="exit__popup-title">До свидания!</h5>
+    <p class="exit__popup-text">
+      Чтобы быть в курсе всех событий Кызылжарской районной больницы, посещайте нас почаще!
+    </p>
+    <button class="popup-btn__exit" type="submit"><a href="{% url "login" %}"> Ok</a></button>
+  </div>
+        </div>
+    </div>
+ </section>
 {% endblock %}

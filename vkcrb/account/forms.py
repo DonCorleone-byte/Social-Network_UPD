@@ -79,3 +79,4 @@ class ProfileEditForm(forms.ModelForm):
 class Login(forms.Form):
     login = forms.CharField(label='Логин', max_length=25),
     password = forms.CharField(label='Пароль', max_length=25, widget=forms.PasswordInput),
+

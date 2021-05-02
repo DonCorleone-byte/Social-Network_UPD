@@ -8,7 +8,16 @@
             <div class="registration__wrapper">
                 <div class="registranion__form">
                     <h5 class="registranion__form-title">Редактируйте свой аккаунт!</h5>
-                    <form method="post">
+                    <form method="post" enctype="multipart/form-data">
+                            {% if messages %}
+                            <ul class="messages">
+                            {% for message in messages %}
+                            <li class="{{ message.tags }}">
+                            {{ message|safe }}
+                            </li>
+                            {% endfor %}
+                            </ul>
+                            {% endif %}
                         {{ user_form }}
                         {{ profile_form }}
                         {% csrf_token %}

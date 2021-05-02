@@ -7,11 +7,13 @@
 <section class="login">
     <div class="container">
         <div class="login__wrapper">
-            <h5 class="registranion__form-title">Рады Вас приветствовать {{ new_user.first_name }}!</h5>
-            <br>
+            <p>
+            <p><h5 class="registranion__form-title">Рады Вас приветствовать {{ new_user.first_name }}!</h5></p>
+            <p>
             <h3 class="registranion__form-subtitle">Ваша учетная запись успешно создана.
                 Теперь вы можете <a href="{% url "login" %}">авторизоваться</a>.
-            </h3>
+            </h3></p>
+            </p>
         </div>
     </div>
 </section>

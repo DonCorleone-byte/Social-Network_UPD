@@ -13,11 +13,21 @@
                             форму:</h3>
                         {{ user_form }}
                         {% csrf_token %}
-                        <button class="registration__btn">Зарегистрировать</button>
+                        <button
+                                class="registration__btn">Зарегистрировать</button>
                     </form>
                 </div>
                 <img src="{% static 'images/registation.jpg' %}" alt="registation.jpg">
             </div>
         </div>
     </section>
+
+    <div id="politic__form">
+    <p>
+        <h5 class="registranion__form-title">Рады Вас приветствовать {{ new_user.first_name }}!
+        <br>
+        <h3 class="registranion__form-subtitle">Ваша учетная запись успешно создана.
+                Теперь вы можете <a href="{% url "login" %}">авторизоваться</a>
+    </p>
+    </div>
 {% endblock %}
