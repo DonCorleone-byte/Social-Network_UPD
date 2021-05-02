@@ -135,8 +135,8 @@ EMAIL_HOST_PASSWORD = "defender0609"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
-MEDIA_URL = 'http://127.0.0.1:8000/static/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

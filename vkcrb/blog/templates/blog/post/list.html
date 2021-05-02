@@ -10,7 +10,7 @@
 
 {% for post in posts %}
                 <div class="publication__list-inner animate__animated animate__fadeInLeftBig">
-                    <img class="post__img" src="{% static 'images/content/post__img-2.jpg' %}" alt="post__img">
+                    <img src="{{post.image.url}}" alt="post__img"  width="100%">
                     <div class="post__content">
 
                         <h3 class="post__title">{{ post.title }}</h3>
