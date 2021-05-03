@@ -1,5 +1,6 @@
 {% extends "base.html" %}
  {% load static %}
+{% load thumbnail %}
 {% block title %}В КЦРБ{% endblock %}
 {% block content %}
 
@@ -71,7 +72,10 @@
         <div class="dashboard__userboard animate__animated  animate__fadeInRightBig animate__delay-1s">
           <div class="dashboard__userboard-wrapper">
             <h4 class="dashboard__userboard-name">Привет <span>{{ request.user.first_name }}</span></h4>
-            <img class="dashboard__userboard-photo" src="{% static 'images/user.png' %}" alt="avatar">
+              {% thumbnail user.profile.photo "100x100" crop="100%" as im %}
+                <img class="user__logo" src="{{ im.url }}" alt="avatar">
+            {% endthumbnail %}
+            <!--<img class="dashboard__userboard-photo" src="{% static 'images/user.png' %}" alt="avatar">-->
 
             <ul class="userboard__list">
               <li class="userboard__list-blog">

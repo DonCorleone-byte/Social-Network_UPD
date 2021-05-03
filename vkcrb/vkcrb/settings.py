@@ -17,7 +17,7 @@ SECRET_KEY = 'leili9*i5$(ev!wkvug+*7s75s7$nyt(^s8u566zgoq#0cpiu)'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-'10d062b78274.ngrok.io',
+'80f4ea8f5424.ngrok.io',
 '127.0.0.1'
 ]
 
@@ -131,7 +131,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_HOST = 'smtp.mail.ru'
 EMAIL_PORT = 2525
 EMAIL_HOST_USER = "pkcrb@bk.ru"
-EMAIL_HOST_PASSWORD = "defender0609"
+EMAIL_HOST_PASSWORD = "defender0619"
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 

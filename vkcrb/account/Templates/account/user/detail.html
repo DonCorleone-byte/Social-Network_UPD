@@ -3,56 +3,24 @@
 
 {% block title %}{{ user.get_full_name }}{% endblock %}
 {% block content %}
-<h1 class="card-title">{{ user.get_full_name }}</h1>
-<div class="profile-info">
-{%thumbnail user.profile.photo "180x180" crop="100%" as im%}
-<img src="{{ im.url }}" class="user-detail">
-{% endthumbnail %}
-</div>
-{% with total_followers=user.followers.count %}
-<span class="count">
-<span class="total">{{ total_followers }}</span>
-Друзей{{ total_followers|pluralize }}
-</span>
-<a href="#" data-id="{{ user.id }}"
-data-action="{% if request.user in user.followers.all %}un{% endif %}follow"
-class="follow button">
-{% if request.user not in user.followers.all %}
-    <button type="submit" class="btn btn-primary btn-block">Добавить в друзья</button>
-{% else %}
-    <button type="submit" class="btn btn-primary btn-block">Удалить из друзей</button>
-{% endif %}
-</a>
+        <section class="user__list">
+        <div class="container">
+            <h5 class="user__list-title">{{ user.get_full_name }}</h5>
+            <div class="user__list-wrapper">
 
+                {%thumbnail user.profile.photo "180x180" crop="100%" as im%}
+                    <img class="user__logo" src="{{ im.url }}" alt="user__logo">
+              {% endthumbnail %}
+            </div>
+    {% with total_images_created=request.user.images_created.count %}
+<p>Вы добавили в закладки
+{{total_images_created }} изображения{{ total_images_created|pluralize }}.</p>
 {% endwith %}
+<p>Для того,чтобы воспользоваться букмарклетом перетащите его в закладки-> откройте на любом сайте и оцените результат
+<a href="javascript:{% include "bookmarklet_launcher.js" %}" class="button">
+    <button class="comments__form-btn">Bookmark it</button></a>
+    </section>
 
 {% endblock %}
 
-{% block domready %}
-  $('a.follow').click(function(e){
-    e.preventDefault();
-    $.post('{% url "user_follow" %}',
-      {
-        id: $(this).data('id'),
-        action: $(this).data('action')
-      },
-      function(data){
-        if (data['status'] == 'ok') {
-          var previous_action = $('a.follow').data('action');
 
-          // toggle data-action
-          $('a.follow').data('action',
-            previous_action == 'follow' ? 'unfollow' : 'follow');
-          // toggle link text
-          $('a.follow').text(
-            previous_action == 'follow' ? 'Unfollow' : 'Follow');
-
-          // update total followers
-          var previous_followers = parseInt(
-            $('span.count .total').text());
-          $('span.count .total').text(previous_action == 'follow' ? previous_followers + 1 : previous_followers - 1);
-        }
-      }
-    );
-  });
-{% endblock %}

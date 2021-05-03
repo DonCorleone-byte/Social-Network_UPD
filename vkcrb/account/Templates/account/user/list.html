@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% load thumbnail %}
-{% load crispy_forms_tags %}
+
 {% block title %}Пользователи{% endblock %}
 {% block content %}
-<div class="card">
+<!--<div class="card">
     <h4 class="card-title"><p class="text-center">Пользователи</p></h4>
         <div id="people-list">
     {% for user in users %}
@@ -21,5 +21,22 @@
 </div>
 {% endfor %}
 </div>
-</div>
+</div>-->
+
+        <section class="user__list">
+        <div class="container">
+            <h5 class="user__list-title">Пользователи</h5>
+            <div class="user__list-wrapper">
+                 {% for user in users %}
+                <a class="user__list-inner" href="{{ user.get_absolute_url }}">
+                {% thumbnail user.profile.photo "100x100" crop="100%" as im %}
+                    <img class="user__logo" src="{{ im.url }}" alt="user__logo">
+                    {% endthumbnail %}
+                    <div class="user__name">{{ user.get_full_name }}</div>
+                </a>
+{% endfor %}
+
+            </div>
+        </div>
+    </section>
 {% endblock %}

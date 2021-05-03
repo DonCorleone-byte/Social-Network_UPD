@@ -429,6 +429,7 @@ body{
 #slider__form1,
 #slider__form2,
 #slider__form3,
+#reset__done,
 #change__form{
     display: none;
     background: #516395;
@@ -907,4 +908,125 @@ body{
 
 .comments__user-btn:hover{
     color: #fff;
+}
+
+.user__list{
+    color: #000;
+}
+
+.user__list-title{
+    font-size: 15px;
+    line-height: 18px;
+    color: #2F3035;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #1C62CD;
+    width: 100px;
+    margin-top: 30px;
+}
+
+.user__list-wrapper{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.user__list-inner{
+    margin: 30px;
+    text-align: center;
+    padding: 30px;
+    cursor: pointer;
+}
+
+
+
+.user__logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #516395;
+    box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+    transition: all .3s;
+}
+
+.user__logo:hover{
+    box-shadow: 0px 7px 20px #516395
+}
+
+.user__name{
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.repost__form{
+    background: rgba(81, 99, 149, 0.95);
+    box-shadow: 0px 4px 50px #666DE9;
+    border-radius: 10px;
+    margin-top: 43px;
+    padding: 50px 70px;
+}
+
+.repost__form-title{
+    text-align: left;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 300;
+    position: relative;
+    padding-right: 100px;
+    margin-bottom: 33px;
+}
+
+.repost__form-title::after{
+    content: url('../images/repost.svg');
+    position: absolute;
+    right: 0;
+}
+
+.repost__form-input{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 15px;
+    color: #A99B9B;
+    margin-bottom: 25px;
+    width: 254px;
+    height: 37px;
+}
+
+.repost__form-textarea{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 770px;
+    height: 225px;
+    resize: none;
+    padding: 15px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #A99B9B;
+}
+
+.form__container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.repost__form-btn{
+    width: 255px;
+    height: 36px;
+    cursor: pointer;
+    background-color: #6C84C7;
+    box-shadow: 0px 4px 40px -7px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    line-height: 14px;
+    transition: all .3s;
+}
+
+.repost__form-btn:hover{
+    box-shadow: 0px 4px 40px -7px #1C62CD;
 }

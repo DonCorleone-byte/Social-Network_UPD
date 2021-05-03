@@ -36,7 +36,8 @@
       <p class="restore__form-info">
         <span>*</span>Если вы забыли имя пользователя или пароль или не можете получить доступ к аккаунту
       </p>
-      <button class="support__form-btn" type="submit">Сбросить</button>
+      <button data-fancybox data-src="#reset__done" href="javascript:;"
+              class="support__form-btn" type="submit">Сбросить</button>
     </form>
   </div>
 
@@ -57,4 +58,13 @@
      </p>
     </p>
  </div>
+
+    <div id="reset__done">
+    <p>
+        Мы отправили вам на электронную почту
+            инструкции по установке пароля.
+            Если вы не получили письмо, убедитесь, что вы
+            ввели адрес, на который вы зарегистрировались.
+    </p>
+    </div>
 {% endblock %}

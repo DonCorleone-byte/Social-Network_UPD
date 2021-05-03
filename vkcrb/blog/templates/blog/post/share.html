@@ -2,7 +2,7 @@
 {% block title %} Отправить пост {% endblock %}
 {% load crispy_forms_tags %}
 {% block content %}
-    {% if sent %}
+<!--    {% if sent %}
         <h1>E-mail успешно отправлен</h1>
         <p>"{{ post.title }}" успешно отправлен по адресу {{ form.cleaned_data.to }}.</p>
     {% else %}
@@ -12,5 +12,33 @@
 {% csrf_token %}
 <input type="submit" value="Отправить E-mail">
 </form>
+{% endif %}-->
+
+        <section class="repost">
+        <div class="container">
+            <h5 class="repost__title">Поделиться</h5>
+            <form class="repost__form" action="." method="post">
+                 {% if sent %}
+                <h6 class="repost__form-title">"{{ post.title }}" успешно отправлен по адресу
+                    {{ form.cleaned_data.to }}.</h6>
+                    {% else %}
+                <div class="form__container">
+                    <div class="form-left">
+                        {{ form }}
+                        {% csrf_token %}
+                       <!-- <input class="repost__form-input" placeholder="Ваше имя" type="text">
+                        <input class="repost__form-input" placeholder="Ваш e-mail" type="e-mail">
+                        <input class="repost__form-input" placeholder="e-mail для отправки" type="e-maill">-->
+                        <button class="repost__form-btn" type="submit">Отправить</button>
+                    </div>
+                    <div class="form-right">
+                      <!--  <textarea class="repost__form-textarea" placeholder="Введите коментарий..."></textarea>-->
+                    </div>
+                </div>
+        </div>
 {% endif %}
+
+        </form>
+        </div>
+    </section>
 {% endblock %}
