@@ -16,10 +16,7 @@ SECRET_KEY = 'leili9*i5$(ev!wkvug+*7s75s7$nyt(^s8u566zgoq#0cpiu)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-'80f4ea8f5424.ngrok.io',
-'127.0.0.1'
-]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,6 +118,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
